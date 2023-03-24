@@ -23,7 +23,7 @@ const promptForEmployeeType = () => {
     inquirer
         .prompt([
             {
-                // choice of 3
+                // choice of 4
                 type: "list",
                 message: "What do you need to do next?",
                 name: "employeeType",
@@ -177,3 +177,11 @@ const promptForIntern = () => {
         });
 };
 
+// write the HTML
+const fillPage = () => {
+    const html = render(employees);
+
+    fs.writeFile(outputPath, html, (err) => {
+        err ? console.error(err) : console.log("Your HTML has been generated");
+    });
+};
