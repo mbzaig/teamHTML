@@ -47,7 +47,7 @@ To install the necessary dependencies, run the following commands:
 ## Credits
 
 The assigment was made possible by following the video recordings and w3schools.com
-and collaboration with Pod5
+and suport from Natalie Navickas
 
 ---
 ## License

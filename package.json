@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
   "scripts": {
     "test": "jest"
   },
@@ -20,6 +17,7 @@
   },
   "homepage": "https://github.com/mbzaig/teamHTML#readme",
   "dependencies": {
+    "fs": "^0.0.1-security",
     "inquirer": "^6.5.0"
   },
   "devDependencies": {

@@ -19,6 +19,35 @@ const employees = [];
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 
 
+    inquirer
+        .prompt([
+            {
+                // choice of 4
+                type: "list",
+                message: "What do you need to do next?",
+                name: "employeeType",
+                choices: [
+                    "Add a Manager",
+                    "Add an Engineer",
+                    "Add an Intern",
+                    "The team is complete",
+                ],
+            },
+        ])
+        .then((response) => {
+            if (response.employeeType === "Add a Manager") {
+                promptForManager();
+            }
+            else if (response.employeeType === "Add an Engineer") {
+                promptForEngineer();
+            } else if (response.employeeType === "Add an Intern") {
+                promptForIntern();
+            } else {
+                fillPage();
+            }
+            //    use the functionality from page-template to generate the team
+        });
+
 const promptForEmployeeType = () => {
     inquirer
         .prompt([
