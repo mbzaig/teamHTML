@@ -60,17 +60,17 @@ inquirer
         },
         {
             type: "input",
-            message: "What is their employee ID?",
+            message: "Enter employee ID?",
             name: "managerID",
         },
         {
             type: "input",
-            message: "What is their email address?",
+            message: "Enter email address?",
             name: "managerEmail",
         },
         {
             type: "input",
-            message: "What is their office number?",
+            message: "Enter office number?",
             name: "managerOffice",
         },
     ])
@@ -85,9 +85,95 @@ inquirer
         );
         // push to array
         employees.push(manager);
-        // prompt for next action
+        // prompt next action
         promptForEmployeeType();
     });
 
 }
+//Prompt for Engineer
+
+const promptForEngineer = () => {
+    inquirer
+        .prompt([
+            {
+                type: "input",
+                message: "What is the Engineer's name?",
+                name: "engineerName",
+            },
+            {
+                type: "input",
+                message: "Enter  employee ID?",
+                name: "engineerID",
+            },
+            {
+                type: "input",
+                message: "Enter  email address?",
+                name: "engineerEmail",
+            },
+            {
+                type: "input",
+                message: "Enter  GitHub username?",
+                name: "engineerGit",
+            },
+            //engineer questions
+        ])
+        .then((response) => {
+            // declare variables
+            const { engineerName, engineerID, engineerEmail, engineerGit } = response;
+            const engineer = new Engineer(
+                engineerName,
+                engineerID,
+                engineerEmail,
+                engineerGit
+            );
+
+            // push inputs to the array
+            employees.push(engineer);
+
+            // prompt for next action
+            promptForEmployeeType();
+        });
+};
+
+const promptForIntern = () => {
+    inquirer
+        .prompt([
+            {
+                //intern questions
+                type: "input",
+                message: "What is the Intern's name?",
+                name: "internName", // not sure the different nameing structure is necessary
+            },
+            {
+                type: "input",
+                message: "Enter  employee ID?",
+                name: "internID",
+            },
+            {
+                type: "input",
+                message: "Enter  email address?",
+                name: "internEmail",
+            },
+            {
+                type: "input",
+                message: "Enter the name of their school?",
+                name: "internSchool",
+            },
+        ])
+        .then((response) => {
+            // add new intern to employees array
+            // declare variables
+            const { internName, internID, internEmail, internSchool } = response;
+            const intern = new Intern(
+                internName,
+                internID,
+                internEmail,
+                internSchool
+            );
+            // push inputs to array
+            employees.push(intern);
+            // prompt for next action
+            promptForEmployeeType();
+        });
+};
 
