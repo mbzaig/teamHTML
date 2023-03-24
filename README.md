@@ -40,7 +40,7 @@ To install the necessary dependencies, run the following commands:
 ---
 
     
-![Site Demo](/images/Demo.gif) 
+![Site Demo](./assets/Demo.png) 
 
 
 ---
