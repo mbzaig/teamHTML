@@ -51,7 +51,7 @@ const promptForEmployeeType = () => {
 };
 const promptForManager=()=>{
 inquirer
-    .promptForManager([
+    .prompt([
         {
             //manager questions
             type: "input",
@@ -90,3 +90,4 @@ inquirer
     });
 
 }
+
